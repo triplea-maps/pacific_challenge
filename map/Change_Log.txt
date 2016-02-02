@@ -1,0 +1,543 @@
+o Russian chance to place had been set to start in Round 1 for playtesting and never got switched to round 6.  Is now round 6+.
+o Changed chance for Russian placements per round from 1 in 6 to 20%.
+o Added 1 infantry in Tsinghai to Russian placements. (2 in hardmode, none in easy mode)
+o Supplies were not set to 1 movement as described in version 4.2 - fixed.
+o Bonus PUs were not being awarded for having 1 or 2 InvestmentX placements. Fixed.
+o SuperSub rotated to same orientation as other naval vessels.
+o German message about reinforcements to arrive now come before reinforcements arrive, not after.
+o German message about no more aid to Japan now comes before last German transmission, not after.
+o Once Allies lose four territories: Allies gain 1 Heavy armour and 1 supplies in India for five rounds.(was: Heavy_Armour only for six rounds)
+o USA and Allies begin technological development on Round 2 (was round 6)
+o Easy Mode and Hard Mode options are no longer available after round 5.  Added round 5 reminder before purchase phase.
+o InvestmentX and ProcessingX now require supplies present, but do not consume them.
+o If Szechwan is controlled by Japan, Chinese will no longer spawn in Szechwan until round 25.  Round 24 spawn on a vacant Szechwan was disabling round 25 Chinese spawns.
+o Removed round 24 and 25 Chinese rebel infantry spawns from the Soviet Union territory.
+o Added rough 'T' terrain effect to Yunnan, China.  Terrain shading added to map relief layer.
+ 
+
+
+
+--- Newest version 4.2  for  TripleA ---
+
+o destroyer & aaGun set to 1 resource cost
+o Harbour now costs 15 PUs +4 Resources.
+o Harbour now gives +2 movement to fleet_fighter/fleet_fighterX
+o Japan now starts with 1 extra Resource on hand.
+o United States now produces three Resources instead of two.
+o Szechwan and Tsinghai now receive two infantry instead of one when an adjacent territory is taken by Japan.
+o Soviet Union spawns one extra infantry on Round 16.
+o Control of Soviet Union is no longer a timeline requirement.
+o Hardcoded artillery support for artilleryX, removed isArtillery attachment.
+o Added Japanese submarine to Sea Zone 10.
+O Added round 32 notification which compares star rankings to player ability levels.
+o Added SPY notifications for American Fleet boost on round 24 or 30.
+o Economic Output now allows for production of InvestmentX and ProcessingX, and no longer negates maintenance.
+o Researching all technologies negates all maintenance and produces an extra Advanced resource per round.  Player is now notified when this occurs.
+o New units InvestmentX and ProcessingX have no new abilities, but no longer require or consume supplies.
+o Reduced timeline bonus for round 18 event to +5 PUs MID timeline, and +10 PUs LO timeline. Bonus now expires after round 30.
+o Adjusted American nuclearbomber spawns to 2 in LO timeline, 1 in MID timeline, +1 in normal mode, +2 in hard mode.  0 to 24 total produced.
+o Removed escort and intercept attack/defense from aircraft with them, as they only function in PvP games.
+o Removed unit called "chinese_production" from xml and unit folders.
+o Interceptors gain one AA defensive shot 1d6 versus fighter/X, fleet_fighter/X, bomber/X, level_bomber/X, bomber_nuclear, or Flying_Tigers.
+o Halftrack/X now receives +1 ATT air support from fighter/X, fleet_fighter/X, or Interceptors - on a 1:1 ratio.
+o Supplies movement reduced to 1.  Now receives +1 movement and Blitz capability from Factory/FactoryX and Halftrack/HalftrackX.
+
+BUGFIXES:
+o Tsinghai "regenerating" factory, was being placed into Szechwan instead of Tsinghai.
+o Notification that Berlin has fallen, was occurring on round 24 in MID timeline in addition to the correct time at round 30.
+o Japan was not receiving ArmamentX on round 24 in MID timeline due to a 'when' overlap on signal unit placement.
+o Round 18 event was not firing because a condition was requiring United States to own Japan instead of United States. 
+o Solved a persistent bug: 4 notifications and 2 triggers were set to fire before "JapanesePlacement".  The correct delegate was "japanesePlace".
+  This bug was introduced several versions ago, to prevent German units from being un-moveable to the player the round they spawn.  Sloppily, the
+  delegate name got entered incorrectly.  Now, German units spawn and notifications related to German progression are firing properly.
+
+MAINTENANCE:
+O the territory list remains unchanged, the following are now added to it: (supplies and transportX are not counted toward unit totals)
+-1 for 15+  units in any one territory
+-1 for 15+  units in any two territories
+-1 for 20+ units in any one territory
+-1 for 10+ units in any one Sea Zone
+-1 for 10+ units units in any Sea Zone
+-1 for 10+ units units in any Sea Zone
+-1 for 15+ units units in any Sea Zone
+-1 for 15+ units units in any Sea Zone
+-1 for 20+ units units in any Sea Zone
+
+RUSSIAN PLACEMENT CHANCE ON ROUNDS 6+ WHEN SOVIET UNION IS NOT JAPANESE CONTROLLED:
+o EASY MODE - none
+o NORMAL MODE - 1:6 chance to place one infantry and one armour in Soviet Union.
+o HARD MODE - 1:6 chance to place two infantry and two armour in Soviet Union.
+
+SUBMARINES REVAMPED:
+o submarine att=3, def=2, gains 2 AA shots versus transports.  2 hit, now repairs at Harbours.  Costs 2 resouces instead of 4.
+o submarineX att=4, def=3, gains 2 AA shots versus transport/transportX. 2 hit, now repairs at Harbours.  Costs 2 resouces instead of 4.
+o SuperSub att now 3+3 instead of 4.
+o Midget Sub is now att=2, def=1, gives +1 att/def to all other submarines.
+o all sub types are now -1 att/def when with allied transports.
+o submarine/submarineX limit per zone is increased to three.  Midget and SuperSub ignore this limit.
+o destroyer/destroyerX has 1 aa shot versus submarine/submarineX.
+o <property name="Subs Can End NonCombat Move With Enemies" set to value="false"
+
+
+--------------------------------------------------------------------------------------
+version 4.1
+
+o Island_BunkerX_hit.png units were not firing, crashing games due to an extra space in the name .... hit .png
+o Japanese enemies will now rebuild factories in Capitols, Tsinghai, and India if the territories are lost and later liberated.
+o Unit clarification: SUPERSUB - can be placed in any owned Sea Zone without factory.(forward placement capability)
+o Added High Technology notification.
+o Deathray Tek cost reduced from 100 to 66, to make it a unit worth considering for gameplay purchase, not just for fun.
+o ArmamentX increased to range=4, attack=3, defense=2.  Armament/ArmamentX no longer receives +2 range from supplies.
+o Added -1 PUs maintenance for having 1, 2, or 3 territories with more than 14 owned units in them.
+o Bonus Japanese income(+6 PUs/round) for having SpyNetwork and controlling Western USA was not firing. fixed.
+o Added Sea Zone numbers to map
+o Map decorations adjusted for improved visibility.
+
+--------------------------------------------------------------------------------------
+version 4.0
+
+xxx New/Balance: 
+o reduced USA and Allied event submarine and transport spawns by several units.(mass stacks of 'AI' subs and transports difficult to handle without destroyerX)
+o Canada will counter-attack once after taken by Japan, with 1 supplies,1 infantry,1 artillery,1 armour, and a fighter, + 1 destroyer in Panama.
+o -1 PUs to income each round when Long Range is researched, for fuel refinement costs.(all nations)
+o 5 American destroyers now enter the Panama Canal when Japan takes Western USA. (to slightly offset advantage of early USA full blitz strategy)
+o Added 2 supplies to USA counter-attack.
+o One of the two conditions to receive MID or HI timelines changed.  Japan must now control 16 Asian territories, including the Soviet Union.
+o Americans receive 3, 2, or 1 extra tech tokens on even rounds 20-30 in LO, MID, or HI timelines, respectively.
+o German transport movement increased from 2 to 3.  German transport capacity increased from 10 to 11. - Makes each German unit unique, fleet can now move as a stack.
+o Now, only one Factory can be built per territory, two with Industrial Might technology. Two Factories doubles the placement capacity of a territory.
+o Hard Mode doubles all Russian unit spawns caused by events.
+o Altered round 10 event:(if Soviet Union not under Japanese control) 2 Russian_Guard units spawn in Soviet Union and in Tsinghai.
+o Altered round 16 event:(if Soviet Union or Szechwan Japanese controlled) 2 Russian_Guard, 2 armour, and FWD base in Tsinghai. 2 infantry in Soviet Union.
+o Hard Mode doubles round 10 and 16 event unit spawns.
+o ROUND 18 EVENT added:  Americans receive income boost: +5 PUs Normal Mode, +10 PUs Hard Mode, +10 PUs Mid Timeline, +20 PUs Lo Timeline
+o Japanese Aid to Germans increased to 5 PUs and 2 Resources per round. (was 4 PUs and 1 Resource) 
+o Changed kamikazi value to 6 even though it is not purchaseable - it was overpriced.
+o Chinese factory in Szechwan will now rebuild itself anytime China re-gains control of Szechwan 
+o China receives -7 PUs/round always.  China receives warbanners instead of wartime income.  China no longer receives any automatic bonus units except as listed below.
+o NEW CHINESE WARBANNER PRODUCTION BONUS SYSTEM:  Once per Chinese territory taken by Japan, each adjacent territory has a 50% chance of spawning a warbanner which 
+  autoproduces one infantry every round.  Tsinghai and Szechwan receive an infantry instead of a chance for a warbanner.  When Tsinghai falls, one infantry spawns in 
+  adjacent territories instead.  When Szechwan falls every Chinese territory receives one infantry instead, two in hardmode. (done for strategic flexibility and variety)
+o Szechwan, while Chinese,  produces an infantry and an artillery each turn any other Chinese territory is under Japanese control.  
+o Infantry and artillery removed from Chinese unit production list.
+
+xxx Graphic Improvements/Clarifications:
+o Added Pics for notifications - to be supported by future versions of TripleA engine.
+o Added RussianGuard and Midget submarine to the N/A unit tab for stat viewing.
+o Tech symbol was missing from the following units.(added) fighterX, fleetfighterX, carrierX, transportX, complexX, factoryX, HarbourX, and IslandBunkerX.
+o INTELLIGENCE REPORTS added to give advanced warning and details of game events if Spy Network is researched, or if playing in easy mode.
+o Notification added to fire if Japan takes the United States, listing game effects.
+o Added custom tooltips to all submarine types, aaGun, factory, complex, supplies and Harbour units. 
+o Notification added when German units appear.
+o Aphabetized Name_Place.txt file and optimized name locations of each territory for font size = 18.
+
+xxx Bug Fixes:
+o battleshipX somehow got set to x1 defensive attack.  It now receives 3 DEF x3, as listed.
+o Americans were receiving double income for islands lost to Japan instead of retaining income as described in game notes.  Fixed.
+o New Guinea and South Australia, both 0 production,  were blockade zones.  Fixed.  Game notes state all 'Valued' territories are blockade zones.
+o Russian Infantry in Soviet Union was attacking Manchuria.  Replaced infantry with 3 RussianGuard units.  att=2, def=3, mov=0.
+o USA was producing an aaGun unit every round on Western USA when at war.  Changed this to 3 aaGuns one time only.
+o Game Notes state that standard aaGun gives +1 DEF to 4 aircraft, but the bonus was only being applied to 3 aircraft. Fixed.
+o When Soviet Union is taken, Russia will not declare war while Tsinghai is owned by Japan.  Fixed.
+o LO timeline fleet spawned during HI timeline after a total victory.  Fixed by changing trigger to not fire when any other timeline conditions exist.
+o HI TIMELINE ROUND 24 skipping two notifications due to: conditional unit was not getting placed until after the notifications were scheduled to fire. Fixed.
+o HI TIMELINE ROUND 35+ gives Russian news after Moscow defeated.  Added notification indicating Russian resistance remains after fall of Moscow.
+o Japanese resource given to Germans during the early high timeline was being given before timeline division (rounds 8 to 16). Fixed.
+o Victory notifications and stars were triggering for end game even after an earlier win.  Fixed.
+o United States itself, was not counting as a lost American territory - warbanner was not spawning when Japan takes United States. Fixed.
+o China not always buying/placing units.  Added one factory to Tsinghai to help China place all of its units.
+o German units were unable to move on turn placed. Fixed.
+o China was buying carriers in many games.  Removed carrier, fleet fighter, and battleship from Chinese unit production list.
+
+xxx Game Notes Clean-Up:
+o SUPPLIES: IS consumes.  WAS consummes.
+o SUPPLIES: IS +4 movement to upgraded bombers.  WAS +4 movement to advanced bombers.
+o HARBOURS: IS "Harbours may only be placed in Sea Zones with a naval base symbol". WAS "...placed in territories with a naval base symbol"
+o Round 30 event: IS 4 infantry, 3 supplies.  WAS 5 infantry, 4 supplies.
+o Removed aaGun Game Notes section. All details now exist in unit tooltip description.
+o Several duplicate conditions removed from XML.
+
+ 
+----------------------------------------------------------------------------------------
+version 3.9
+
+o added custom tooltip descriptions for Processing and Investment.
+o added unit upgrade notifications for every technology.
+O added notifications for first two events
+o Tech victory now only requires 15 naval/airbase territories instead of 18.
+o Hi Technology unit now spawns with 10 naval/airbase territories controlled and five techs researched.
+o added victory star winning units. Rewrote, Mistake-proofed, and tested related triggers and conditions.
+o added one supply to Formosa, Ryuku, Bonin, and Mariana.
+o added two bunkers to United States and one to Western Canada.
+o added aaGun to United States and to Western Canada.
+o Allied supplies added to India, Solomon, and New Britain.
+o Removed American fighter from Hawaiian and added two supplies.
+o Added to Game Notes for clarification: SuperSub unit does not count toward maximum of 2 Japanese submarines per sea zone.
+o Added to Game Notes for clarification: For strategic raids, bombers do D2 PUs damage for each attack dice they use in combat.
+o Added to Game Notes for clarification: For naval bombardment, ships support one land unit for each attack dice they use in combat.
+o Removed 1 Chinese infantry from Hopei and Hunan to decrease early game Japanese defensive burden.
+o Removed 2 transports, 2 subs, 1 infantry, and 1 destroyer from Allied fleet event spawns.
+o Removed one Russian armour unit from the round 16 Tsinghai counter-strike
+o removed "rockets" power from aaGuns, since it was not working and created an extra in-game confirmation window.
+o Japan now receives half (-12 PUs/rnd) income for owning United States due to American resistance.
+o Victory banner for taking the United States will spawn two times, in case it is destroyed once.
+o lowered requirement for Asian control from 20 Japanese territories to 16 territories - to trigger MID or HI timeline.
+o Hardmode was giving +5 PUs to Japan instead of to Allies and Americans. Fixed.
+o Easymode now gives +5 PUs to Japan, -5 PUs to allies and Americans, adds one Resource and Tek each round, and eliminates Chinese infantry spawn when Szechwan conquered.
+o added two Advanced resources gained when research focus is developed as a small one-time bonus.
+o Removed transports from Musashi/Yamato support lists and added Cruisers.
+o Each Yamato and Musashi bonus now stacks.
+o Flying Tigers now ATT=3/DEF=4, instead of ATT=2/DEF=3.
+o reduced scramble range of fighters and fleetfighters from 2 to 1.  fighterX and fleetfighterX still have scramble range=2.
+o HalftrackX transport size reduced from 6 to 5, and becomes air transportable.
+o aaGunX is now air transportable.
+o aaGun and aaGunX now gives +1 defense to as many air units as it has AA shots.
+o aaGun and aaGunX, together, have a stack limit of 2 total per territory.
+o Transport no longer receives Harbour/HarbourX +1 movement bonus.  TransportX still receives Harbour/HarbourX +1 movement bonus.
+o added one carrier capacity to carrierX.
+o reduced move bonus of carrier to fleetfighterX from +4 to +2.(only carrierX/fleetfighterX combination receives +4 range)
+o Island Bunker is now DEF=2, 2-hit self repairing and gives +2 defense to two artillery, aaGuns, infantry, Marines, or Armaments.
+o Island BunkerX is now DEF=4, 2-hit self repairing and gives +2 defense to four artillery, aaGuns, infantry, Marines, or Armaments.
+o Removed escort/intercept paragraph from game notes as it is almost never encountered in a non-PvP game.  Values, however, remain.
+o artillery transport cost increased from 5 to 6.  artilleryX transport cost remains at 5.
+o Dreadnaught carrier capacity decreased from 3 to 2.
+o All bomber types now have base range of 4.  Advanced and upgraded bombers receive +4 range from supplies instead of +2 range.
+o All armour units are now ATT=2, DEF=1 in T terrain (Burma and Shan State).  In addition, T terrain disables all armour blitzing.
+o added rare event. On round 23 one Japanese infantry in Burma, if one exists, will be eaten by salt-water crocodiles.
+o Round 30 Russian Invasion from Tsinghai now spawns 5 bombers, 4 infantry, 3 supplies, 2 forward bases, and one Chinese complex.
+o Removed all bonus ranges given to Death Charges, except from Long Range Technology.
+o Reworked Armament/ArmamentX bonuses as follows:  * Only Armament bonuses from the Musashi and Yamato are stacking.
+     +2 movement bonus from supplies, +2 more for Long Range Technology
+     Scramble range = 1, from aaGuns and from sea zones
+     Receives +1 defense from battleship, destroyerX, carrierX, HarbourX, aaGun, aaGunX  and Musashi*
+     Receives +2 defense from Cruisers, battleshipX, Dreadnaught, MegaCarrier, SuperSub, and Island BunkerX
+     Receives +1 attack fom Cruisers, battleshipX, Dreadnaught, MegaCarrier, SuperSub, and Yamato*
+     Receives one D6 first strike defensive AA shot (2 for ArmamentX)
+
+o NEW UNIT: Midget submarine. ATT=2 DEF=2 MOV=2. Two-Hit, self repairing.  Blockade=4.  Ignores submarine stacking limits.
+One-of-a-kind submarine unit received by Japan when Submarine Upgrade is researched. Unit has no att/def if any 
+owned transports are present. Midget gives +1 attack/defense to all SuperSub and submarineX units.
+
+o Processing chances to produce Advanced resource bumped up by one in game notes to reflect the actual game:
+1st Unit: 1 Resource and 1 in 6 chance to produce an Advanced resource
+2nd Unit: 2 Resources and 1 in 5 chance to produce an Advanced resource
+3rd Unit: 3 Resources and 1 in 4 chance to produce an Advanced resource
+4th Unit: 4 Resources and 1 in 3 chance to produce an Advanced resource
+5th Unit: 5 Resources and 1 in 2 chance to produce an Advanced resource
+6th Unit: 6 Resources and 1 automatic Advanced resource
+Each unit has production cumulative with the others.  It is possible to create 21 Resources about two Advanced resources each round with Processing.
+
+O UNIT MAINTENANCE OVERHAULED: effects begin on round 4
+	Each territory can support a number of units equal to twice its production value plus one unit.
+	Original Japanese territories can support two extra units.
+	Territories with more units than they can support, will produce -1 PUs per round.
+	Supplies are not counted as units in any territories.
+	fighter and fighterX are not counted in [A]irbase territories.
+	Marine and MarineX are not counted in [N]avalbase territories.
+	The United States and Japan territory are exempt from maintenance.
+	A custom objectives tab has been added to show the maintenance status in all territories.
+
+xxx Timeline conditions and triggers were causing sporadic timeline bugs:
+o Renamed some timeline conditions, removed one redundant trigger, and fixed one erroneously called conditional unit.
+o German messages not firing for one instance. Added 'when' trigger for message to fire 'after' a conditional unit is placed.
+o Mid timeline was looking for the wrong condition between rounds 24 and 29.  Fixed.
+
+
+-----------------------------------------------------------------------------------
+version 3.8  
+
+* NOTE: unit bombardment values listed in game are multiplied by the number of unit attacks.
+o shortened folder name from Pacific_Thater_Solo_Challenge to Pacific_Challenge.
+o newly placed kamikaze units are no longer immobile for one round.
+o complex now consumes supplies in order to place.
+o aaGunX, complexX, and island_bunkerX require supplies for placement, but do not consume them.
+o added one extra AA shot to all aaGuns.
+o aaGun now has 2 ATT, 1 DEF.  aaGunX now has 3 ATT, 2 DEF.
+o Halftrack descriptions now include giving artillery attack support bonus.
+o removed Halftrack movement bonus given to DeathRays
+o reduced number of DeathCharge attacks from 10x1 to 6x1.
+o DeathCharges now have 2 movement of their own and receive +1 extra range from a complexX.
+o DeathCharges now have 1 carrier cost, allowing them to generate and be used while a DeathRay is transported at sea.
+o DeathRay now has 1 movement. When transported, DeathCharges need carrier air capacity to survive.
+o added +1 PUs generation and removed transport capacity of Harbours to simplify
+  transport loading while increasing the strategic value of all naval base zones.
+
+o upgraded the affect of Processing as follows:
+1st Unit: 1 Resource and 1 in 7 chance to produce an Advanced resource
+2nd Unit: 2 Resources and 1 in 6 chance to produce an Advanced resource
+3rd Unit: 3 Resources and 1 in 5 chance to produce an Advanced resource
+4th Unit: 4 Resources and 1 in 4 chance to produce an Advanced resource
+5th Unit: 5 Resources and 1 in 3 chance to produce an Advanced resource
+6th Unit: 6 Resources and 1 in 2 chance to produce an Advanced resource
+Each unit has production cumulative with the others.  It is possible to create 21 Resources each round with Processing.
+
+-----------------------------------------------------------------------------------
+version 3.7  for  TripleA 1.6.1.2+
+
+o Musashi notification was repeating. fixed to once only, and improved timing.
+o Added some custom soundFX supported by 1.6.1.3 engine.
+
+-----------------------------------------------------------------------------------
+version 3.6  for  TripleA 1.6.1.2 
+
+o swapped PU cost of Dreadnaught and Deathray
+o swapped panel position of Investment and Processing
+o corrected some notification mispelling and errant formatting
+o German-->Japanese Aid was not giving +3 Tek per round. fixed.
+
+-----------------------------------------------------------------------------------
+version 3.5  for  TripleA 1.6.1.2
+
+o removed 'construction' type from units requiring a factory.
+o removed "harbour" unit presence requirements - prevented SuperCarrier/Dreadnaught placement.
+o added start game supplies to Philippines, Malaya, Carolines, and Japan.
+o added enemy war declaration notifications.
+o added Musashi Launch notification.
+o added 'T' terrain to Burma and Shan State - gives armour units -1 att/def
+o added 'o' terrain to all water - gives FleetFighter +1 att/def
+        'o' water terrain gives FleetFighterX +2 att/def
+o renamed island terrain to 'I' terrain... still gives marines +1 att/def
+o reduced carrier defense bonus to FleetFighter/FleetFighterX from +2 to +1
+o reduced cost of FighterX to 7 PUs
+
+---------------------------------------------------------------------------------------
+version 3.4  for  TripleA 1.6.1.2 
+
+o fixed several notification bugs
+o fixed numerous typos and documentation inconsistancies.
+o fixed German bombers so that they now load units. Transport Capacity 12 each.
+o fixed harbour support attachments so that they give non-Japanese same bonuses.
+o fixed High_Tech unit from spawning for any Japanese technology instead of all.
+o added one carrier capacity to Dreadnaught, increased required Advances cost from 3 to 4. Supports one extra Armament with +1 ATT/DEF
+o SuperSub Advances required decreased from 3 to 2.
+o swapped Interceptor and Armament positions on the purchase panel.
+o reduced LevelBomberX transport capacity from 12 to 9 as listed and intended.
+o Removed Szechwan to Sea Zone 50 connection as it served no purpose and could be exploited for amphibious attack.
+o Added Chinese factory to Kiansi and Kwangsi.
+o Added Allied factory to Hong Kong.
+o USA & Allies now declare war on round 6 if not yet at war.
+o Units which requried other units now consume supplies instead. Exceptions are the Advanced Ships which now require a Harbour present.
+o All anti-aircraft rolls for all units have been converted to 1D6 shots, overstacking.  Created AA unit table in game notes.
+o Increased the chance for each Processing unit to produce an Advanced resource.
+o Deathray no longer has aaGun ability.  Instead, every Deathcharge has a 1d6 anti-aircraft shot.
+o In PTSC, halftrack is now a conglomerate of lesser used units: halftrack, recon, mobile anti-air, moblie artillery, amphibious vehicles, and anti-tanks. 
+o Advanced cost modification: increased Tek costs of some units and decreased the PU cost of some units.
+o Asian requirement for German aid was: control India,Tsinghai,Szechwan, and Soviet Union on round 16.
+                                now is: control 20 out of 23 mainland Asian territories on round 16.
+
+= [KNOWN ISSUE] aaGun rockets never in range. Unknown cause.
+
+---------------------------------------------------------------------------------------
+version 3.3  for  TripleA 1.6.1.2
+
+--- BUG FIXES ---
+o added longrange pics for Japanese aircraft
+o bombers are not getting proper eco bombing rolls...fixed, was missing new global
+o JapRusWar banner no longer leaves Tsinghai in a "being attacked" map-color-state if Tsinghai taken before Soviet Union.
+o enemy factories no longer spawn in Japanese controlled India, United States, or New South Wales 
+
+--- GAME CHANGES ---
+o aaUpgrade: added 4 extra aaguns USA, 2 extra New South Wales, 1 India. Usa-->Jap at war gives Americans an aaGun in Hawaiian. Removed aaGuns from AI production lists.
+o switch no production rule to 100 PUs mark.
+o added blank die images for dice rolls 7-12.
+o switched BioBomber into LevelBomber. Allies and Americans now gain a LevelBomber each time they research a new technology.
+o added notifications for victories, losses, round news reports, technology upgrades, and special events.
+o New 5 Star Victory System: 1 per victory banner, +1 for normal mode, +2 for hardmode, +1 if both victory banners won by turn35.
+o Divergent timelines: Germany will faire better or worse based on Japanese economic aid and Asian mainland conquest.
+o Usa tech cost reduced by 2 PUs
+o Researching every technology now spawns an additional High Technology unit in Japan(gives +1 Advanced resource per round)
+o changed tech cost of bottom row... 10 level bomber, 15 armaments, 21 interceptor, 28 supersub, 36 megacarrier, 45 dreadnaught,  100 deathray
+o Start Game Unit Setup: to make a Pearl Harbour type event possible, give Philippines a chance to be costly to Japanese attackers, and add starting Japanese Marines.
+  Panama -3 Cruiser, +2 carriers, +2 fighters, +1 submarine, + destroyer
+  Malaya: -2 infantry, +2 marine
+  Hawaiian: -1 destroyer, -1 infantry, +1 carrier, +1 LevelBomber
+  Philippines: +1 IslandBunker
+  Carolines: -4 infantry, +4 Marines
+  Sea Zone 5: -1 carrier, -1 fighter
+  11 Sea Zone: -1 carrier, -1 fighter, +2 Cruiser
+  3 Sea Zone: -1 submarine
+o adding bracketed Fatigue/Maintenance effect based on # of units owned:(still playtesting for balance)
+  105-109	 -1 PUs/round
+  110-114	 -3 PUs/round
+  115-119	 -6 PUs/round
+  120-124	-10 PUs/round
+  125+          -15 PUs/round
+
+--- UNIT CHANGES ---
+o Harbour: requires factory instead of complex to place. Repairs Interceptor, battleship, and battleshipX. airbase. Gives 2 Armaments +1 defense
+o harbourX:  +1 defense for 4 interceptors +4 air slots. +5 transport points. +1 defense for 4 Armaments. Repairs battleship and battleshipXrequires factory instead of   complex to place. 
+o Halftracks: require no complex, now gets D6 single shot versus air on defense - mistakenly attacked to Japanese Mech Inf instead of MarineUpgrade
+o BioBomber:  att=1,1,1 def=0 transport=6 range=6 eco=3xD2  blockade=1  (now cost 10 Tek, 5 PUs, 1 Advanced, 2 resources) 
+o BioBomberX: att=1,1,1,1,1  def=1 transport=9 range=8 eco=5xD2  blockade=2 (were not receiving upgrade from bomberUpgrade)
+o bomber: att=3,3 def=1,1 range=4 eco D2  
+o bomberX: att=4,4 def=2,2 range=6 D2 -2 cost
+o supplies: give +2 movement to fighter, bomber, fleet fighter  Supply size=3, now air transportable
+o aaGun: is airbase, 10% anti-aircraft, +1 defense to 2 air units (to 4 air units for aaGunX) no longer gives movement to transport
+o Complex: +1 defense to six land units.  No longer has AA capability. No longer gives bomber movement bonus.
+o Bunker: remove aa value, no longer repairable. cost now =5PUs.
+o BunkerX: remove aa value, added self-repairing.
+o Marine: added +1 att/def on islands and air transportable. Also added to marine version
+o MarineX: receive one extra unit per purchase.
+o Interceptor: removed two-hit. Gains +1 defense from carrierX
+o carrierX: gives +1 defense to two Interceptors
+o transportX: added +1 transport capacity
+o deathray: limit is now 3 instead of 5.
+o deathcharge: now does 10 rolls of 1 attacking, 3 rolls of 1 defending
+o battleship: now 2d3 defense
+o battleshipX: now 3d3 defense
+o Dreadnaught: now 4d3 defense
+o transports: now a 0 attack, 0 defense, stealth unit - can withdraw at the end of a combat round.  Still can absorb hits.
+
+--- EVENT CHANGES/ADD-ONS ---
+o -1USA: add aaGun to Hawaiian
+o 2+: Japan gains Research capability
+o 4+: Japan receives War Fatigue Effect 
+o 20: China gains American joint forces bomber units to aid during Soviet attacks, instead of American on American turn.
+o 22: Alles 2x force of carrier,fleetfighter,cruiser,transport appears left if india present, right if NewSouthWales exists.
+         USA gains 8 cruisers in SeaZone 2 if not at war with Japan.
+o 24: Chinese Rebellion (infantry) 1:3(x3) Tsinghai, SovietUnion, 1:3(x6) mainland, 1:3(x9) Szechwan.(only if Szechwan is Japanese controlled)
+o 26: if USA exists and controls an airbase near Japan: strikes with 4 nuclear bombers. Nuclear bombers will spawn on even rounds remaining.
+o 28: Usa gains 6 Armaments in Hawaiian and India gains complex in normal and hard modes if the respective territories are owned by USA and Allies.
+      additionally, United States gains 6 Armaments and New South Wales gains 3 LevelBombers if Japan is in Hard Mode or already won a victory banner.
+o 30: if no victory banner, Germany Falls, lose German aid, Russia begins mainland liberation. Tsinghai: 10 bombers, 1 Chinese complex, and 2 Forward Bases.
+
+ooo ---> NEW GERMANY TIMELINE INTERACTION, see game notes for details
+
+-------------------------------------------------------------------------------------------------------------------
+version 3.2  for  TripleA 1.6.1.2
+
+o All units which "require units" to place had the advanced versions of the units added to the list
+o aaGuns require an AirBase symbol + infantry, bomber, bomberX, BioBomber, or BioBomberX unit to place.
+o Updated game notes including note that Armaments without longrange tech limit ship speed to 2.
+
+-------------------------------------------------------------------------------------------------------------------
+version 3.1  for  Triplea 1.6.1.2
+
+o Added -reset- before all techcost changes and added checks so that no other triggers get fired to prevent random costs 
+o AI now loses ability to produce infantry when marines become available. MarineX unit reduced to 3 PUs cost for AI only. 
+o 4 fewer spawns of special forces and 2 fewer heavy armour spawns for AI_Allies
+o Added technology development selectability option.  Removed: deselectablility of "Paratroopers Can Attack Deep Into Enemy Territory" 
+o Added Airbase and +1 Tek to India and New South Wales 
+o Harbour construction placement zones now tied to sea zones bordering naval base territories. 
+o aaGuns now constructions, placement now tied to air base territories, limit 1 placed per territory per turn. Requires infantry or bomber present , no factory required.
+o aaGunUpgrade: every enemy originally owned airbase under current control gains an aaGunX 
+o BushidoCode tech renamed to Economic_Output (warbonds) and made available to AI 
+o Added "when-beforeTech" trigger modification so that Research costs will be actual at the moment
+o Decreased research cost by 1 PUs, to make them correct to formula: [[25 PUs - #air/naval base territories]-2 PUs for Research Focus technology]
+o Increased 'Advanced' resource cost of Dreadnaught, SuperSub, and MegaCarrier from 1 Advanced to 3 Advanced
+o Added 'NO PRODUCTION BUG RULE': (player enforced) If Americans or Allies exceed 200 PUs on Japans turn, Human player should enter edit mode
+  and do the following: set AI PUs to 25 PUs.  Add one of each possible unit not already at the location to the nations capital and adjacent sea zone.
+o Removed +1 movement bonus given to submarineX unit by Harbours
+o Armaments redisigned and given a custom graphic.  Now single hit air units with 1 carrying cost. att=2 def=1 mov=2.  See game notes for full info.  Armaments no longer   require Resources to purchase.  Some units give bonuses to Armaments.  They can be mounted on all battleships(1), cruisers(1), SuperSub(2), Yamato(2), Musashi(2),       destroyerX(1), battleshipX(1), Dreadnaught(3), carrier(4), and MegaCarrier(10).  Each of these ships counts as an airbase.  Armaments can now intercept/escort with an    att=4, def=4, and range=1.  
+o Dreadnaught and SuperSub now self-repair.
+o escort/intercept value changes: in game notes.
+o Removed SpecialForces from the game... replaced them with marineX units.
+o Added isMarine amphibious bonus to all halftrack type units. Switched HalftrackX upgrade from Heavy Warfare technology to MarineUpgrade technology for balance
+o DeathRay now produces one DeathCharge per round.  A DeathCharge is a range 2 kamikaze suicide unit/ray which does six rolls at one attack, three rolls at one defense.
+o Added triggers to remove DeathCharge units from all territories without a DeathRay evey turn.
+o DeathRay cost changed to 25 PUs, 6 Resources, 50 Tek, and 5 Advanced
+o Industrial_Might tech for Allies/Americans now does the following one time only: 
+     adds a  complex to their existing complex(dual complexes) 
+     rebuilds any lost harbours(gives new harbourX off Papua and Philippines)
+     rebuilds any lost factories(FactoryX at all original factory locales)
+     adds an island_bunker on New Britain(if Allies controlled) and Hawaii(if American controlled)
+o UNIT STARTUP MODIFICATION: 
+        India has 5 infantry instead of 6 infantry 
+        50 Sea Zone has 1 Cruiser(AI_Allies), instead of 1 battleship, 1 carrier, and 1 fighter 
+        2 Sea Zone has 3 Cruisers(AI_Americans), instead of 4 Cruisers
+
+-------------------------------------------------------------------------
+version 3.0 for Triplea 1.6.1.2
+
+o  Revised Research cost to 25 PUs -1 PU per air/naval base controlled. Japanese technology becomes available after the first round of play.
+o  United States and Allies now begin buying tech tokens on round 6+.  Some of their techs slightly differ from Japanese... detailed in game notes.
+o  Research Focus now gives +2 Tek per turn and makes tech tokens cost -2 PUs each.
+o  Tiny high technology symbol now floats over all units functionally improved by research.
+o  added submarineX to 2 per zone limitation list.  SuperSub is not limited by sub stacking limitation.
+
+--------------------------------------------------------------------------
+
+version 2.9  for  Triplea 1.6.1.2
+
+o  dice reskinned and included start_turn sound effect for manual swapping
+o  submarines now 2 att/def/mov 2hit self-repairing.  Japanese submarines are mechanically limited to 2 max per Sea Zone.  SuperSub now 4/4/4 att/def/mov.
+o  bombardment changes: casualties will no longer return fire. destroyers=1, cruiser=2, battleship=3.  Multi-attack units also have Multi-bombardment/industrial bombing.
+o  reduced American Cruiser count from 8 to 4 in Sea Zone 2 at game start.  American trigger producing 8 Cruisers on turn 22 now working.
+o  made all capitals give unlimited production when self-owned... this fixed AI not producing
+o  Hard Mode now subtracts 5 PUs from Japanese income each turn, adds 5 PUs to American and Allied incomes, and doubles the number of infantry which spawn when Szechwan is conquered.
+o  German units given tech-upgraded stats.
+o  Factories in territories taken are now destroyed.  AI will only rebuild lost Factories in  New South Wales, India, and the United States.
+o  map PU changes: Celebes, Borneo, Java, and Sumatra were reduced from 3 PUs to 2 PUs.  Added 1 PU to New Britain, Papua, Hong Kong, and Canada. This change makes an island progression more enticing for japan, rewards the precarious act of taking and holding Hong Kong early, and prevents Japan from gaining production as quickly for taking the West Indies immediately.  Took 1 PU from Japan and gave it to Ryukyu.
+o  China's income is reduced.(after the first turn China does not use income, so it accumulates). This income is a reward gained for taking Soviet Union, Szechwan, or Tsinghai.
+o  added 14 technologies.  These technologies are unlocked when High_Technology becomes available (approx. midpoint of the game).  Technology Tokens cost 8 PUs.  Technologies are designed to have a value equivalent to 10-20 PUs each at this point in the game.  For effects.. see game notes. 
+
+---------------------------------------------------------------------------
+
+version 2.8  for  Triplea 1.6
+
+o  War banner on New South Wales was spawning for 10 rounds instead of 1 round
+o  fixed description on Musashi to give an attack bonus instead of defense
+o  verified Musashi combat bonuses and gave unique mod names to prevent cancellation by Yamato
+o  changed allied triggers and descriptions to match. T-1 starts war, T-4 hvyTanks, T-7 fleet
+o  added bomber_nuclear_hit for 2 hit unit.  removed old unused unit pics from folders.
+
+-------------------------------------------------------------------------
+
+version 2.7  for  Triplea 1.6
+
+o  inserted working trigger for placing Musashi when Usa and Japan at war
+o  added isDestoyer property to SuperSub
+o  added isLandTransport property to Halftrack, allowing them to transport 1 infantry unit. Verified functionality.  Make sure to click Halftrack first then infantry then move.
+o  confirmed that processors are producing resource and advanced properly
+o  German bombers can each carry and paradrop 3 Japanese Infantry.  Verified working.. A bit touchy on unit quantity selection.
+o  Included start_your_turn.wav - accessible when unzipped.
+o  Added sendspace downloadability.
+
+------------------------------------------------------------------------
+
+version 2.6 for Triplea 1.6 
+
+o  added +5 PUs to enemies in hard mode
+o  added objective: easy mode gives +1 resource per turn
+o  removed AA from British Special Forces(prevented ai from moving them)
+o  added new pic and name for battle cruiser Yamamoto, now the Yamato
+o  Panama Canal now gives 1 Advanced in addition to 1 Tek
+o  USA now receives double matching income for each island Japan takes from them (22 total) instead of 25 when at WAR
+o  USA at war now produces 1 cruiser (33%) and 1 submarine (33%) per turn when at war
+o  Harbour unit now produces 1 PU income per turn
+o  Britain is not at war until Japan takes a land from them  
+o  Japan now starts game with 2 resources
+o  Fixed game notes to NOT say Russia counterstrikes 2 turns, since it is a single strike
+o  Submarines can now end non-combat moves in enemy sea zones
+o  Added custom descriptive tooltips for game modes
+o  slowed down skipping of purchase/place by AI.  Added simulated production to China.
+fixed German Bombers to use paratroopers properly
+Processing triggers now produce Advanced correctly
+AI no longer skips purchase/placement
+
+
+o  Yamato's sister ship 'Musashi' now launches when Americans declare war.  See game notes for stats
+o  anti-stealth taken away from destroyers
+o  submarine: blockade increased from 1 to 2
+o  supersub: blockade increased from 2 to 5
+o  Deathray:  cost = 5 advanced 50 PUs 50 tek  max built = 5
+o  Dreadnaught: now 3x3
+o  nuclear bomber is now two hit self-repairing singular unit with 6 attacks of 3, defense of 3
+
+
+new resources costs:
+
+marine    - 2 resources
+bomber    - 2 resources
+AAgun     - 2 resources
+carrier   - 2 resources
+cruiser   - 2 resources
+biobomber - 2 resources
+submarine - 4 resources
+factory   - 4 resources
+battleship  6 resources
+complex     6 resources
+investment  6 resources
+armament    6 resources
+
+-------------------------------------------------------------------------
