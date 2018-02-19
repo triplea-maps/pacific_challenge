@@ -1569,7 +1569,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="defense" value="3"/>
       <option name="defenseRolls" value="2"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="3"/>
+      <option name="bombard" value="3"/>
       <option name="hitPoints" value="2"/>
       <option name="carrierCapacity" value="1"/>
       <option name="isAirBase" value="true"/>
@@ -1582,7 +1582,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="defense" value="3"/>
       <option name="defenseRolls" value="3"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="3"/>
+      <option name="bombard" value="3"/>
       <option name="hitPoints" value="2"/>
       <option name="carrierCapacity" value="1"/>
       <option name="isAirBase" value="true"/>
@@ -1595,7 +1595,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="attackRolls" value="3"/>
       <option name="defenseRolls" value="4"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="3"/>
+      <option name="bombard" value="3"/>
       <option name="hitPoints" value="2"/>
       <option name="carrierCapacity" value="2"/>
       <option name="maxBuiltPerPlayer" value="1"/>
@@ -1800,7 +1800,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="1"/>
+      <option name="bombard" value="1"/>
       <option name="maxAAattacks" value="1"/>
       <option name="attackAA" value="1"/>
       <option name="attackAAmaxDieSides" value="6"/>
@@ -1816,7 +1816,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="2"/>
+      <option name="bombard" value="2"/>
       <option name="isDestroyer" value="true"/>
       <option name="carrierCapacity" value="1"/>
       <option name="isAirBase" value="true"/>
@@ -1835,7 +1835,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="2"/>
+      <option name="bombard" value="2"/>
       <option name="isDestroyer" value="true"/>
       <option name="carrierCapacity" value="1"/>
       <option name="isAirBase" value="true"/>
@@ -1861,7 +1861,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="targetsAA" value="fighter:fighterX:fleet_fighter:fleet_fighterX:bomber:bomberX:LevelBomber"/>
       <option name="typeAA" value="AACruiser"/>
       <option name="canBombard" value="true"/>
-      <option name="Bombard" value="2"/>
+      <option name="bombard" value="2"/>
       <option name="carrierCapacity" value="1"/>
       <option name="isAirBase" value="true"/>
     </attachment>
