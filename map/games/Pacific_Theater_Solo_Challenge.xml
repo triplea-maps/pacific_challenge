@@ -6986,7 +6986,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentUsaLev16plus" attachTo="AI_Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentUsaBomberUpgrade:"/>
+      <option name="conditions" value="conditionAttachmentUsaBomberUpgrade"/>
       <option name="placement" value="United States:LevelBomberX" count="1"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -7444,7 +7444,7 @@ Western Australia:Northern Territory:South Australia:Queensland:New South Wales:
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentAllLev16plus" attachTo="AI_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAllBomberUpgrade:"/>
+      <option name="conditions" value="conditionAttachmentAllBomberUpgrade"/>
       <option name="placement" value="New South Wales:LevelBomberX" count="1"/>
       <option name="uses" value="1"/>
     </attachment>
