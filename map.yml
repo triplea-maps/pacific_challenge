@@ -1,0 +1,3 @@
+map_name: pacific_challenge
+games:
+- {game_name: Pacific Theater Solo Challenge, file_name: Pacific_Theater_Solo_Challenge.xml}
